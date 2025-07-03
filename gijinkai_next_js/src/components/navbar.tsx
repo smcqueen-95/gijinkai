@@ -28,7 +28,7 @@ export function Navbar() {
   const [open, setOpen] = React.useState(false);
 
   return (
-    <Container className="flex justify-between py-2 items-center bg-background/30 backdrop-blur-2xl sticky top-0 z-50 w-full">
+    <Container className="flex justify-between py-2 items-center bg-background/30 backdrop-blur-2xl fixed top-4 left-2 right-2  z-50 w-full rounded-xl ">
       <div className="font-bold xl:text-xl">
         <span className="bg-gradient-to-r from-indigo-600 via-blue-500 to-cyan-400 bg-clip-text text-transparent mr-2">
           技尽界スタジオ
