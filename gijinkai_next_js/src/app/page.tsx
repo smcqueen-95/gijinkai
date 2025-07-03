@@ -1,13 +1,29 @@
 import Container from "@/components/container";
-import FancyHoverArea from "@/components/fancy-hover-area";
 import { Button } from "@/components/ui/button";
-import { ChevronRightIcon } from "lucide-react";
+import {
+  Card,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { TypographyH1, TypographyP } from "@/components/ui/typography";
 import Link from "next/link";
+import Image from "next/image";
+
+const featuredProjects = [
+  {
+    title: "Project 1",
+    description:
+      "Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat.",
+    imageUrl: "https://placehold.co/400",
+    href: "/",
+  },
+];
 
 export default function Home() {
   return (
     <main>
-      <div className="relative isolate overflow-hidden bg-white">
+      <div className="relative isolate overflow-hidden">
         <svg
           aria-hidden="true"
           className="absolute inset-0 -z-10 size-full mask-[radial-gradient(100%_100%_at_top_right,white,transparent)] stroke-gray-200"
@@ -33,10 +49,10 @@ export default function Home() {
         </svg>
         <div className="mx-auto max-w-7xl px-6 pt-10 pb-24 sm:pb-32 lg:flex lg:px-8 lg:py-40">
           <div className="mx-auto max-w-2xl lg:mx-0 lg:shrink-0 lg:pt-8">
-            <h1 className="mt-10 text-5xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-7xl">
+            <h1 className="mt-10 text-5xl font-semibold tracking-tight text-pretty text-primary sm:text-7xl">
               Gijinkai Studio
             </h1>
-            <p className="mt-8 text-lg font-medium text-pretty text-gray-500 sm:text-xl/8">
+            <p className="mt-8 text-lg font-medium text-pretty text-muted-foreground sm:text-xl/8">
               Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui
               lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat.
             </p>
@@ -62,6 +78,48 @@ export default function Home() {
           </div>
         </div>
       </div>
+
+      <Container>
+        <div>
+          <TypographyH1>Featured Projects</TypographyH1>
+          <p className="text-center max-w-sm mx-auto mt-4">
+            Explore our latest work across web development, game development and
+            manga
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 mt-6">
+          {/* <Card>
+            <CardHeader>
+              <CardTitle>Project 1</CardTitle>
+              <CardDescription>
+                <TypographyP>
+                  Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure
+                  qui lorem cupidatat commodo. Elit sunt amet fugiat veniam
+                  occaecat.
+                </TypographyP>
+              </CardDescription>
+            </CardHeader>
+          </Card> */}
+          {featuredProjects.map((project) => (
+            <Card key={project.title}>
+              <CardHeader>
+                <CardTitle>{project.title}</CardTitle>
+                <CardDescription>
+                  <TypographyP>{project.description}</TypographyP>
+                </CardDescription>
+              </CardHeader>
+              {/* <img
+                src={project.imageUrl}
+                alt={project.title}
+                height={400}
+                width={400}
+                className="h-full w-full object-cover"
+              /> */}
+            </Card>
+          ))}
+        </div>
+      </Container>
     </main>
   );
 }

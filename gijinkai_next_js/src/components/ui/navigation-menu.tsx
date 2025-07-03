@@ -4,6 +4,7 @@ import { cva } from "class-variance-authority";
 import { ChevronDownIcon } from "lucide-react";
 
 import { cn } from "@/lib/utils";
+import { buttonVariants } from "./button";
 
 function NavigationMenu({
   className,
@@ -70,7 +71,7 @@ function NavigationMenuTrigger({
   return (
     <NavigationMenuPrimitive.Trigger
       data-slot="navigation-menu-trigger"
-      className={cn(navigationMenuTriggerStyle(), "group", className)}
+      className={cn(buttonVariants({ variant: "ghost" }), "group", className)}
       {...props}
     >
       {children}{" "}
