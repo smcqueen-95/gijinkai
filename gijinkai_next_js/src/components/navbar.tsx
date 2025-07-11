@@ -44,7 +44,7 @@ export function Navbar() {
               asChild
               className={buttonVariants({ variant: "ghost" })}
             >
-              <Link href="/home">Home</Link>
+              <Link href="/">Home</Link>
             </NavigationMenuLink>
           </NavigationMenuItem>
           <NavigationMenuItem>
