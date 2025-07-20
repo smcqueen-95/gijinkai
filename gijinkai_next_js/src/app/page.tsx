@@ -1,12 +1,11 @@
-import Container from "@/components/container";
-import FancyHoverArea from "@/components/fancy-hover-area";
+import FeaturedProjects from "@/components/featured-projects";
 import { Button } from "@/components/ui/button";
-import { ChevronRightIcon } from "lucide-react";
 import Link from "next/link";
 
 export default function Home() {
   return (
     <main>
+      {/* Herp */}
       <div className="relative isolate overflow-hidden bg-white">
         <svg
           aria-hidden="true"
@@ -32,7 +31,7 @@ export default function Home() {
           />
         </svg>
         <div className="mx-auto max-w-7xl px-6 pt-10 pb-24 sm:pb-32 lg:flex lg:px-8 lg:py-40">
-          <div className="mx-auto max-w-2xl lg:mx-0 lg:shrink-0 lg:pt-8">
+          <div className="mx-auto max-w-2xl lg:mx-0 lg:shrink-0 lg:pt-32">
             <h1 className="mt-10 text-5xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-7xl">
               Gijinkai Studio
             </h1>
@@ -62,6 +61,9 @@ export default function Home() {
           </div>
         </div>
       </div>
+
+      {/* Featured */}
+      <FeaturedProjects />
     </main>
   );
 }

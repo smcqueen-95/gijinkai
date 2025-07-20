@@ -28,7 +28,7 @@ export function Navbar() {
   const [open, setOpen] = React.useState(false);
 
   return (
-    <Container className="flex justify-between py-2 items-center bg-background/30 backdrop-blur-2xl fixed top-4 left-2 right-2  z-50 w-full rounded-xl ">
+    <Container className="flex max-w-7xl justify-between py-2 items-center bg-background/30 backdrop-blur-lg fixed top-4 left-0 right-0  z-50 w-full rounded-xl ">
       <div className="font-bold xl:text-xl">
         <span className="bg-gradient-to-r from-indigo-600 via-blue-500 to-cyan-400 bg-clip-text text-transparent mr-2">
           技尽界スタジオ
@@ -40,39 +40,21 @@ export function Navbar() {
       <NavigationMenu className="hidden lg:flex" viewport={false}>
         <NavigationMenuList>
           <NavigationMenuItem>
-            <NavigationMenuLink
-              asChild
-              className={navigationMenuTriggerStyle()}
-            >
-              <Link href="/home">Home</Link>
-            </NavigationMenuLink>
+            <NavigationMenuLink href="/">Home</NavigationMenuLink>
           </NavigationMenuItem>
           <NavigationMenuItem>
-            <NavigationMenuLink
-              asChild
-              className={navigationMenuTriggerStyle()}
-            >
-              <Link href="/projects">Projects</Link>
-            </NavigationMenuLink>
+            <NavigationMenuLink href="/projects">Projects</NavigationMenuLink>
           </NavigationMenuItem>
           <NavigationMenuItem>
-            <NavigationMenuLink
-              asChild
-              className={navigationMenuTriggerStyle()}
-            >
-              <Link href="/services">Services</Link>
-            </NavigationMenuLink>
+            <NavigationMenuLink href="/services">Services</NavigationMenuLink>
           </NavigationMenuItem>
           <NavigationMenuItem>
-            <NavigationMenuLink
-              asChild
-              className={navigationMenuTriggerStyle()}
-            >
-              <Link href="/products">Products</Link>
-            </NavigationMenuLink>
+            <NavigationMenuLink href="/products">Products</NavigationMenuLink>
           </NavigationMenuItem>
           <NavigationMenuItem>
-            <NavigationMenuTrigger>About</NavigationMenuTrigger>
+            <NavigationMenuTrigger className="font-normal">
+              About
+            </NavigationMenuTrigger>
             <NavigationMenuContent>
               <ul className="grid w-[200px] gap-4 p-4">
                 <li>
@@ -109,20 +91,10 @@ export function Navbar() {
             </NavigationMenuContent>
           </NavigationMenuItem>
           <NavigationMenuItem>
-            <NavigationMenuLink
-              asChild
-              className={navigationMenuTriggerStyle()}
-            >
-              <Link href="/pricing">Pricing</Link>
-            </NavigationMenuLink>
+            <NavigationMenuLink href="/pricing">Pricing</NavigationMenuLink>
           </NavigationMenuItem>
           <NavigationMenuItem>
-            <NavigationMenuLink
-              asChild
-              className={navigationMenuTriggerStyle()}
-            >
-              <Link href="/contact">Contact</Link>
-            </NavigationMenuLink>
+            <NavigationMenuLink href="contact">Contact</NavigationMenuLink>
           </NavigationMenuItem>
           <NavigationMenuItem
             asChild
