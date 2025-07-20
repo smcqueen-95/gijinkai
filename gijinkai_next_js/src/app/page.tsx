@@ -1,12 +1,30 @@
-import FeaturedProjects from "@/components/featured-projects";
+import Container from "@/components/container";
 import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { TypographyH1, TypographyP } from "@/components/ui/typography";
 import Link from "next/link";
+import Image from "next/image";
+import FeaturedProjects from "@/components/featured-projects";
+
+const featuredProjects = [
+  {
+    title: "Project 1",
+    description:
+      "Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat.",
+    imageUrl: "https://placehold.co/400",
+    href: "/",
+  },
+];
 
 export default function Home() {
   return (
     <main>
-      {/* Herp */}
-      <div className="relative isolate overflow-hidden bg-white">
+      <div className="relative isolate overflow-hidden">
         <svg
           aria-hidden="true"
           className="absolute inset-0 -z-10 size-full mask-[radial-gradient(100%_100%_at_top_right,white,transparent)] stroke-gray-200"
@@ -31,11 +49,11 @@ export default function Home() {
           />
         </svg>
         <div className="mx-auto max-w-7xl px-6 pt-10 pb-24 sm:pb-32 lg:flex lg:px-8 lg:py-40">
-          <div className="mx-auto max-w-2xl lg:mx-0 lg:shrink-0 lg:pt-32">
-            <h1 className="mt-10 text-5xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-7xl">
+          <div className="mx-auto max-w-2xl lg:mx-0 lg:shrink-0 lg:pt-8">
+            <h1 className="mt-10 text-5xl font-semibold tracking-tight text-pretty text-primary sm:text-7xl">
               Gijinkai Studio
             </h1>
-            <p className="mt-8 text-lg font-medium text-pretty text-gray-500 sm:text-xl/8">
+            <p className="mt-8 text-lg font-medium text-pretty text-muted-foreground sm:text-xl/8">
               Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui
               lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat.
             </p>

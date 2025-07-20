@@ -42,14 +42,6 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
-
-  /* Custom Gijinkai Studio Colors */
-  --gijinkai-purple: oklch(40% 0.15 290); /* Approx #6B46C1 */
-  --gijinkai-blue: oklch(60% 0.15 220); /* Approx #4299E1 */
-  --gijinkai-light-blue: oklch(85% 0.1 180); /* Approx #81E6D9 */
-  --gijinkai-card-light-purple: oklch(95% 0.05 270); /* Approx #E0E7FF */
-  --gijinkai-card-light-blue: oklch(95% 0.03 200); /* Approx #E0F2F7 */
-  --gijinkai-card-light-green: oklch(95% 0.03 150); /* Approx #E6FFFA */
 }
 
 :root {
@@ -128,30 +120,4 @@
   body {
     @apply bg-background text-foreground;
   }
-}
-
-@keyframes shine {
-  0% {
-    background-position: -200% 0;
-  }
-  100% {
-    background-position: 200% 0;
-  }
-}
-
-@keyframes glow {
-  0% {
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(100%);
-  }
-}
-
-.animate-shine {
-  animation: shine 1.5s linear infinite;
-}
-
-.animate-glow {
-  animation: glow 1.5s linear infinite;
 }

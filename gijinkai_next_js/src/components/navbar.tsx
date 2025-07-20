@@ -56,7 +56,7 @@ export function Navbar() {
               About
             </NavigationMenuTrigger>
             <NavigationMenuContent>
-              <ul className="grid w-[200px] gap-4 p-4">
+              <ul className="grid w-[200px] gap-2">
                 <li>
                   <NavigationMenuLink asChild>
                     <Link
@@ -78,13 +78,13 @@ export function Navbar() {
                   </NavigationMenuLink>
                 </li>
                 <li>
-                  <NavigationMenuLink asChild>
-                    <Link
-                      href="#"
-                      className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                    >
-                      Blocks
-                    </Link>
+                  <NavigationMenuLink
+                    asChild
+                    className={`${buttonVariants({
+                      variant: "ghost",
+                    })} w-full items-start`}
+                  >
+                    <Link href="#">Blocks</Link>
                   </NavigationMenuLink>
                 </li>
               </ul>
