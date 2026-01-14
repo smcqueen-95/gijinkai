@@ -15,10 +15,10 @@ export default function Button({
   onClick,
   type = 'button',
 }: ButtonProps) {
-  const baseClasses = 'inline-flex items-center justify-center rounded-md font-medium focus:outline-none transition-all duration-200'
+  const baseClasses = 'inline-flex items-center justify-center rounded-md font-medium focus:outline-none transition-all duration-300'
   
   const variantClasses = {
-    primary: 'gradient-button hover:opacity-90 shadow-md hover:shadow-lg',
+    primary: 'gradient-button hover:opacity-95 shadow-md',
     secondary: 'bg-secondary text-white hover:opacity-90 shadow-md hover:shadow-lg',
     outline: 'border-2 border-primary text-primary hover:bg-primary/5',
   }

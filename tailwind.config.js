@@ -24,6 +24,11 @@ module.exports = {
       },
       animation: {
         gradient: 'gradient 15s ease infinite',
+        blob: 'blob 7s infinite',
+        'fade-in-up': 'fade-in-up 0.8s ease-out forwards',
+        float: 'float 6s ease-in-out infinite',
+        'pop-out': 'pop-out 4s ease-in-out infinite',
+        'float-gentle': 'float-gentle 5s ease-in-out infinite',
       },
       keyframes: {
         gradient: {

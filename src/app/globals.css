@@ -6,7 +6,12 @@
 
 @layer components {
   .gradient-button {
-    @apply bg-gradient-to-r from-primary to-secondary text-white transition-all duration-200 shadow-md hover:shadow-lg hover:opacity-90;
+    @apply bg-gradient-to-r from-primary to-secondary text-white transition-all duration-300 shadow-md;
+  }
+  
+  .gradient-button:hover {
+    @apply shadow-2xl;
+    opacity: 0.95;
   }
   
   .gradient-text {
@@ -81,6 +86,19 @@ body {
   }
 }
 
+/* Full viewport height support */
+@supports (height: 100dvh) {
+  .min-h-screen {
+    min-height: 100dvh;
+  }
+}
+
+/* Ensure hero sections can use full viewport */
+.hero-fullscreen {
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
 /* Touch-friendly buttons on mobile */
 @media (hover: none) and (pointer: coarse) {
   button, a {
@@ -116,8 +134,103 @@ body {
   }
 }
 
+@keyframes blob {
+  0%, 100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes pop-out {
+  0%, 100% {
+    transform: perspective(1200px) translateZ(0px) rotateY(-3deg) rotateX(2deg);
+  }
+  50% {
+    transform: perspective(1200px) translateZ(40px) rotateY(-6deg) rotateX(-2deg);
+  }
+}
+
+@keyframes float-gentle {
+  0%, 100% {
+    transform: translateY(0px) translateZ(0px);
+  }
+  50% {
+    transform: translateY(-15px) translateZ(20px);
+  }
+}
+
 @layer utilities {
   .animate-gradient {
     animation: gradient 15s ease infinite;
+  }
+  
+  .animate-blob {
+    animation: blob 7s infinite;
+  }
+  
+  .animate-fade-in-up {
+    animation: fade-in-up 0.8s ease-out forwards;
+  }
+  
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .animate-pop-out {
+    animation: pop-out 4s ease-in-out infinite;
+  }
+  
+  .animate-float-gentle {
+    animation: float-gentle 5s ease-in-out infinite;
+  }
+  
+  .perspective-1000 {
+    perspective: 1000px;
+    perspective-origin: center center;
+  }
+  
+  .animation-delay-300 {
+    animation-delay: 0.3s;
+  }
+  
+  .animation-delay-500 {
+    animation-delay: 0.5s;
+  }
+  
+  .animation-delay-1000 {
+    animation-delay: 1s;
+  }
+  
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+  
+  .animation-delay-4000 {
+    animation-delay: 4s;
   }
 }

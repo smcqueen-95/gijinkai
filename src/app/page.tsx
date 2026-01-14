@@ -4,43 +4,161 @@ import Button from '@/components/Button'
 export default function HomePage() {
   return (
     <>
-      {/* Hero Section */}
-      <section className="relative bg-white overflow-hidden">
-        <div className="absolute inset-0 z-0 opacity-10">
-          <svg className="w-full h-full" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      {/* Hero Section - Full Viewport Height */}
+      <section className="relative bg-gradient-to-br from-white via-gray-50 to-white overflow-hidden min-h-[calc(100dvh-4rem)] flex items-center">
+        {/* Animated Background Pattern */}
+        <div className="absolute inset-0 z-0 opacity-[0.03]">
+          <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
             <defs>
-              <pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse">
-                <path d="M 10 0 L 0 0 0 10" fill="none" stroke="#7475EB" strokeWidth="0.5" />
-              </pattern>
+              <linearGradient id="gradientOverlay" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#7475EB" stopOpacity="0.1" />
+                <stop offset="50%" stopColor="#47EEEF" stopOpacity="0.05" />
+                <stop offset="100%" stopColor="#7475EB" stopOpacity="0.1" />
+              </linearGradient>
             </defs>
-            <rect width="100" height="100" fill="url(#grid)" />
+            <rect width="100" height="100" fill="url(#gradientOverlay)" />
           </svg>
         </div>
+
+        {/* Floating Gradient Orbs */}
+        <div className="absolute top-20 left-10 w-72 h-72 bg-primary/10 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob"></div>
+        <div className="absolute top-40 right-10 w-72 h-72 bg-secondary/10 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
+        <div className="absolute -bottom-8 left-1/2 w-72 h-72 bg-primary/10 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
         
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28 relative z-10">
-          <div className="flex flex-col md:flex-row items-center">
-            <div className="md:w-1/2 md:pr-12">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold">
-                <span className="font-display">技尽界</span>
-                <span className="block mt-2">Gijinkai Studio</span>
+        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 py-8 sm:py-12 relative z-10">
+          <div className="flex flex-col md:flex-row items-start justify-start gap-8 md:gap-10 lg:gap-12 xl:gap-16 2xl:gap-20">
+            {/* Left Content */}
+            <div className="md:w-1/2 md:pl-8 lg:pl-12 xl:pl-16 2xl:pl-20 md:pr-6 lg:pr-10 xl:pr-12 2xl:pr-16 text-left w-full animate-fade-in-up">
+              {/* <div className="inline-block mb-4 md:mb-6 lg:mb-8 xl:mb-10 px-4 py-2 rounded-full bg-primary/10 border border-primary/20">
+                <span className="text-sm font-medium text-primary font-display">技術の限界を超える</span>
+              </div> */}
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl font-bold leading-tight tracking-tight text-left">
+                <span className="font-display block bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient">
+                  技尽界
+                </span>
+                <span className="block mt-3 md:mt-4 lg:mt-5 xl:mt-6 text-gray-900 whitespace-nowrap">
+                  Gijinkai Studio
+                </span>
               </h1>
-              <p className="mt-6 text-xl text-dark">
-                Creating innovative digital experiences with Japanese-inspired design excellence.
+              <p className="mt-6 sm:mt-8 md:mt-10 lg:mt-12 xl:mt-16 2xl:mt-20 text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl text-gray-600 max-w-2xl lg:max-w-3xl xl:max-w-4xl leading-relaxed">
+                Creating innovative digital experiences with <span className="font-semibold text-primary">Japanese-inspired</span> design excellence.
               </p>
-              <div className="mt-8 flex flex-col sm:flex-row gap-4">
-                <Link href="/projects"><Button size="lg">Our Projects</Button></Link>
-                <Link href="/contact"><Button variant="outline" size="lg">Contact Us</Button></Link>
+              <div className="mt-8 sm:mt-10 md:mt-12 lg:mt-16 xl:mt-20 2xl:mt-24 flex flex-col sm:flex-row gap-4 md:gap-6 justify-start">
+                <Link href="/projects" className="inline-block">
+                  <Button size="lg" className="text-base sm:text-lg md:text-xl px-8 py-4 md:px-10 md:py-5 shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300">
+                    Our Projects
+                  </Button>
+                </Link>
+                <Link href="/contact" className="inline-block">
+                  <Button variant="outline" size="lg" className="text-base sm:text-lg md:text-xl px-8 py-4 md:px-10 md:py-5 border-2 hover:shadow-lg hover:scale-105 transition-all duration-300">
+                    Contact Us
+                  </Button>
+                </Link>
               </div>
             </div>
-            <div className="md:w-1/2 mt-12 md:mt-0">
-              <div className="relative">
-                <div className="absolute -inset-4 rounded-xl bg-gradient-to-r from-primary to-secondary opacity-30 blur-xl"></div>
-                <div className="relative rounded-xl bg-white p-6 shadow-xl">
-                  <div className="aspect-w-16 aspect-h-9 bg-gray-100 rounded-lg overflow-hidden">
-                    <div className="w-full h-full bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
-                      <span className="text-6xl font-display font-bold gradient-text">技尽界</span>
-                    </div>
-                  </div>
+
+            {/* Right Visual - Anime Character Popping Out */}
+            <div className="md:w-1/2 mt-8 md:mt-0 md:pl-6 lg:pl-10 xl:pl-12 2xl:pl-16 w-full flex-shrink-0 flex items-center justify-center relative animate-fade-in-up animation-delay-300">
+              <div className="relative w-full max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl">
+                {/* Multiple Glowing Aura Layers for Depth */}
+                <div className="absolute inset-0 bg-gradient-to-r from-primary/40 via-secondary/40 to-primary/40 rounded-full blur-3xl opacity-60 animate-pulse -z-10"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-secondary/30 via-primary/30 to-secondary/30 rounded-full blur-2xl opacity-50 animate-pulse animation-delay-1000 -z-10"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-secondary/20 to-primary/20 rounded-full blur-xl opacity-40 -z-10"></div>
+                
+                {/* Anime Character SVG with 3D Pop-out Effect */}
+                <div className="relative z-10 transform animate-pop-out" style={{ transformStyle: 'preserve-3d' }}>
+                  <svg 
+                    viewBox="0 0 400 500" 
+                    className="w-full h-auto relative"
+                    style={{ 
+                      filter: 'drop-shadow(0 30px 60px rgba(116, 117, 235, 0.6)) drop-shadow(0 15px 40px rgba(71, 238, 239, 0.5))',
+                    }}
+                  >
+                    <defs>
+                      <linearGradient id="charGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" stopColor="#7475EB" stopOpacity="0.9" />
+                        <stop offset="100%" stopColor="#47EEEF" stopOpacity="0.9" />
+                      </linearGradient>
+                      <radialGradient id="hairGradient" cx="50%" cy="50%">
+                        <stop offset="0%" stopColor="#2C1810" />
+                        <stop offset="100%" stopColor="#1a0f09" />
+                      </radialGradient>
+                    </defs>
+                    
+                    {/* Energy Aura around character - Behind */}
+                    <circle cx="200" cy="300" r="160" fill="none" stroke="url(#charGradient)" strokeWidth="2" opacity="0.2" className="animate-pulse animation-delay-1000" />
+                    <circle cx="200" cy="300" r="140" fill="none" stroke="url(#charGradient)" strokeWidth="2" opacity="0.3" className="animate-pulse" />
+                    
+                    {/* Hair - Anime Style */}
+                    <g className="animate-float animation-delay-300">
+                      <path d="M 200 70 Q 140 50 100 100 Q 80 140 90 170 Q 95 200 110 230 Q 125 250 145 270 L 145 200 Q 135 175 142 145 Q 148 120 162 108 L 200 70 Z" fill="url(#hairGradient)" />
+                      <path d="M 200 70 Q 260 50 300 100 Q 320 140 310 170 Q 305 200 290 230 Q 275 250 255 270 L 255 200 Q 265 175 258 145 Q 252 120 238 108 Z" fill="url(#hairGradient)" />
+                      {/* Hair highlight */}
+                      <path d="M 200 70 Q 180 85 160 120 Q 150 150 155 180" stroke="#4a3428" strokeWidth="1" fill="none" opacity="0.5" />
+                    </g>
+                    
+                    {/* Head */}
+                    <ellipse cx="200" cy="180" rx="75" ry="85" fill="#FFDBAC" />
+                    
+                    {/* Left Eye - Large Anime Style */}
+                    <g>
+                      <ellipse cx="175" cy="170" rx="14" ry="20" fill="#FFFFFF" />
+                      <ellipse cx="175" cy="176" rx="10" ry="12" fill="#2C1810" />
+                      <circle cx="177" cy="173" r="4" fill="#FFFFFF" />
+                      <ellipse cx="172" cy="168" rx="5" ry="8" fill="#FFFFFF" opacity="0.9" />
+                    </g>
+                    
+                    {/* Right Eye */}
+                    <g>
+                      <ellipse cx="225" cy="170" rx="14" ry="20" fill="#FFFFFF" />
+                      <ellipse cx="225" cy="176" rx="10" ry="12" fill="#2C1810" />
+                      <circle cx="227" cy="173" r="4" fill="#FFFFFF" />
+                      <ellipse cx="222" cy="168" rx="5" ry="8" fill="#FFFFFF" opacity="0.9" />
+                    </g>
+                    
+                    {/* Blush - Kawaii Style */}
+                    <ellipse cx="155" cy="200" rx="12" ry="10" fill="#FFB6C1" opacity="0.5" />
+                    <ellipse cx="245" cy="200" rx="12" ry="10" fill="#FFB6C1" opacity="0.5" />
+                    
+                    {/* Mouth - Happy Expression */}
+                    <path d="M 188 210 Q 200 220 212 210" stroke="#2C1810" strokeWidth="2.5" fill="none" strokeLinecap="round" />
+                    
+                    {/* Neck */}
+                    <rect x="185" y="240" width="30" height="18" rx="4" fill="#FFDBAC" />
+                    
+                    {/* Upper Body - Anime Style Outfit */}
+                    <path d="M 150 258 Q 145 300 150 340 Q 155 370 170 390 Q 185 405 200 410 Q 215 405 230 390 Q 245 370 250 340 Q 255 300 250 258 Z" fill="url(#charGradient)" />
+                    
+                    {/* Left Arm - Raised High */}
+                    <ellipse cx="130" cy="275" rx="22" ry="32" fill="#FFDBAC" transform="rotate(-25 130 275)" />
+                    <ellipse cx="105" cy="310" rx="18" ry="28" fill="#FFDBAC" transform="rotate(-30 105 310)" />
+                    {/* Hand */}
+                    <circle cx="95" cy="335" r="12" fill="#FFDBAC" />
+                    
+                    {/* Right Arm - Raised High */}
+                    <ellipse cx="270" cy="275" rx="22" ry="32" fill="#FFDBAC" transform="rotate(25 270 275)" />
+                    <ellipse cx="295" cy="310" rx="18" ry="28" fill="#FFDBAC" transform="rotate(30 295 310)" />
+                    {/* Hand */}
+                    <circle cx="305" cy="335" r="12" fill="#FFDBAC" />
+                    
+                    {/* Sparkle Effects - Magical */}
+                    <g className="animate-ping">
+                      <circle cx="140" cy="130" r="4" fill="#47EEEF" opacity="0.9" />
+                      <path d="M 140 130 L 140 125 M 140 130 L 140 135 M 140 130 L 135 130 M 140 130 L 145 130" stroke="#47EEEF" strokeWidth="1.5" opacity="0.7" />
+                    </g>
+                    <g className="animate-ping animation-delay-500">
+                      <circle cx="260" cy="130" r="3.5" fill="#7475EB" opacity="0.9" />
+                      <path d="M 260 130 L 260 126 M 260 130 L 260 134 M 260 130 L 256 130 M 260 130 L 264 130" stroke="#7475EB" strokeWidth="1.5" opacity="0.7" />
+                    </g>
+                    <g className="animate-ping animation-delay-1000">
+                      <circle cx="175" cy="110" r="3" fill="#47EEEF" opacity="0.7" />
+                      <path d="M 175 110 L 175 107 M 175 110 L 175 113 M 175 110 L 172 110 M 175 110 L 178 110" stroke="#47EEEF" strokeWidth="1" opacity="0.6" />
+                    </g>
+                  </svg>
+                  
+                  {/* Multiple shadow layers for pop-out effect */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-primary/40 via-secondary/40 to-primary/40 rounded-full blur-3xl -z-20 opacity-60" style={{ transform: 'translateY(50px) scale(1.3)' }}></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-secondary/30 via-primary/30 to-secondary/30 rounded-full blur-2xl -z-20 opacity-50" style={{ transform: 'translateY(45px) scale(1.25)' }}></div>
                 </div>
               </div>
             </div>

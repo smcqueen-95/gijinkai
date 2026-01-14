@@ -43,9 +43,11 @@ export default function Header() {
                 {item.name}
               </Link>
             ))}
-            <button className="gradient-button px-4 py-1 rounded-full text-white text-sm font-medium">
+            <div className="flex items-center">
+            <button className="gradient-button px-4 py-1 rounded-lg text-white text-sm font-medium">
               Get Started
             </button>
+            </div>
           </nav>
           
           {/* Mobile menu button */}
