@@ -1,10 +1,9 @@
-import React from 'react';
-import Layout from '../layouts/MainLayout';
-import Button from '../components/Button';
+import Link from 'next/link'
+import Button from '@/components/Button'
 
-const AboutPage: React.FC = () => {
+export default function AboutPage() {
   return (
-    <Layout>
+    <>
       {/* Hero Section */}
       <section className="bg-gray-50 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -36,7 +35,7 @@ const AboutPage: React.FC = () => {
             <div className="md:w-1/2">
               <h2 className="text-3xl font-bold text-dark">Our Story</h2>
               <p className="mt-4 text-lg text-gray-600">
-                Founded in 2020, Gijinkai Studio was born from a passion for blending cutting-edge technology with the elegance and precision of Japanese design principles. Our name, 技尽界 (Gijinkai), represents our commitment to pushing the boundaries of technical expertise ("技") to its fullest potential ("尽") in the digital realm ("界").
+                Founded in 2020, Gijinkai Studio was born from a passion for blending cutting-edge technology with the elegance and precision of Japanese design principles. Our name, 技尽界 (Gijinkai), represents our commitment to pushing the boundaries of technical expertise (&quot;技&quot;) to its fullest potential (&quot;尽&quot;) in the digital realm (&quot;界&quot;).
               </p>
               <p className="mt-4 text-lg text-gray-600">
                 We are a team of designers, developers, and digital artists who share a vision of creating digital experiences that are not only functional but also aesthetically inspiring and culturally rich.
@@ -191,17 +190,17 @@ const AboutPage: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold text-white">Want to work with us?</h2>
           <p className="mt-4 text-xl text-white/90 max-w-3xl mx-auto">
-            Let's create something amazing together.
+            Let&apos;s create something amazing together.
           </p>
           <div className="mt-8">
-            <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-primary">
-              Contact Us Today
-            </Button>
+            <Link href="/contact">
+              <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-primary">
+                Contact Us Today
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
-    </Layout>
-  );
-};
-
-export default AboutPage;
+    </>
+  )
+}

@@ -1,17 +1,15 @@
-import React from 'react';
-import Layout from '../layouts/MainLayout';
-import Button from '../components/Button';
+import Button from '@/components/Button'
 
-const ContactPage: React.FC = () => {
+export default function ContactPage() {
   return (
-    <Layout>
+    <>
       {/* Hero Section */}
       <section className="bg-gray-50 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-4xl font-bold text-dark">Contact Us</h1>
             <p className="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">
-              Let's start a conversation about your project.
+              Let&apos;s start a conversation about your project.
             </p>
           </div>
         </div>
@@ -25,7 +23,7 @@ const ContactPage: React.FC = () => {
             <div>
               <h2 className="text-3xl font-bold text-dark">Get in Touch</h2>
               <p className="mt-4 text-lg text-gray-600">
-                We'd love to hear from you. Fill out the form and our team will get back to you as soon as possible.
+                We&apos;d love to hear from you. Fill out the form and our team will get back to you as soon as possible.
               </p>
               
               <div className="mt-8 space-y-6">
@@ -233,7 +231,7 @@ const ContactPage: React.FC = () => {
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-dark">Visit Our Office</h2>
             <p className="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">
-              We're located in the heart of Shibuya, Tokyo.
+              We&apos;re located in the heart of Shibuya, Tokyo.
             </p>
           </div>
           
@@ -245,8 +243,6 @@ const ContactPage: React.FC = () => {
           </div>
         </div>
       </section>
-    </Layout>
-  );
-};
-
-export default ContactPage;
+    </>
+  )
+}

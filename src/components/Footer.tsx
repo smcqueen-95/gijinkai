@@ -1,7 +1,6 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link'
 
-const Footer: React.FC = () => {
+export default function Footer() {
   return (
     <footer className="bg-dark text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -39,20 +38,20 @@ const Footer: React.FC = () => {
           <div>
             <h3 className="text-sm font-semibold text-secondary tracking-wider uppercase">Pages</h3>
             <ul className="mt-4 space-y-2">
-              <li><Link to="/" className="text-gray-300 hover:text-white transition-colors">Home</Link></li>
-              <li><Link to="/about" className="text-gray-300 hover:text-white transition-colors">About</Link></li>
-              <li><Link to="/projects" className="text-gray-300 hover:text-white transition-colors">Projects</Link></li>
-              <li><Link to="/services" className="text-gray-300 hover:text-white transition-colors">Services</Link></li>
+              <li><Link href="/" className="text-gray-300 hover:text-white transition-colors">Home</Link></li>
+              <li><Link href="/about" className="text-gray-300 hover:text-white transition-colors">About</Link></li>
+              <li><Link href="/projects" className="text-gray-300 hover:text-white transition-colors">Projects</Link></li>
+              <li><Link href="/services" className="text-gray-300 hover:text-white transition-colors">Services</Link></li>
             </ul>
           </div>
           
           <div>
             <h3 className="text-sm font-semibold text-secondary tracking-wider uppercase">More</h3>
             <ul className="mt-4 space-y-2">
-              <li><Link to="/products" className="text-gray-300 hover:text-white transition-colors">Products</Link></li>
-              <li><Link to="/pricing" className="text-gray-300 hover:text-white transition-colors">Pricing</Link></li>
-              <li><Link to="/contact" className="text-gray-300 hover:text-white transition-colors">Contact</Link></li>
-              <li><Link to="/privacy" className="text-gray-300 hover:text-white transition-colors">Privacy Policy</Link></li>
+              <li><Link href="/products" className="text-gray-300 hover:text-white transition-colors">Products</Link></li>
+              <li><Link href="/pricing" className="text-gray-300 hover:text-white transition-colors">Pricing</Link></li>
+              <li><Link href="/contact" className="text-gray-300 hover:text-white transition-colors">Contact</Link></li>
+              <li><Link href="/privacy" className="text-gray-300 hover:text-white transition-colors">Privacy Policy</Link></li>
             </ul>
           </div>
           
@@ -80,7 +79,5 @@ const Footer: React.FC = () => {
         </div>
       </div>
     </footer>
-  );
-};
-
-export default Footer;
+  )
+}

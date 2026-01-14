@@ -1,10 +1,9 @@
-import React from 'react';
-import Layout from '../layouts/MainLayout';
-import Button from '../components/Button';
+import Link from 'next/link'
+import Button from '@/components/Button'
 
-const ProductsPage: React.FC = () => {
+export default function ProductsPage() {
   return (
-    <Layout>
+    <>
       {/* Hero Section */}
       <section className="bg-gray-50 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -391,14 +390,14 @@ const ProductsPage: React.FC = () => {
             Contact us to discuss custom product development for your specific needs.
           </p>
           <div className="mt-8">
-            <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-primary">
-              Contact Us
-            </Button>
+            <Link href="/contact">
+              <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-primary">
+                Contact Us
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
-    </Layout>
-  );
-};
-
-export default ProductsPage;
+    </>
+  )
+}

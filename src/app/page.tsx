@@ -1,11 +1,9 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import Layout from '../layouts/MainLayout';
-import Button from '../components/Button';
+import Link from 'next/link'
+import Button from '@/components/Button'
 
-const HomePage: React.FC = () => {
+export default function HomePage() {
   return (
-    <Layout>
+    <>
       {/* Hero Section */}
       <section className="relative bg-white overflow-hidden">
         <div className="absolute inset-0 z-0 opacity-10">
@@ -30,8 +28,8 @@ const HomePage: React.FC = () => {
                 Creating innovative digital experiences with Japanese-inspired design excellence.
               </p>
               <div className="mt-8 flex flex-col sm:flex-row gap-4">
-                <Button size="lg">Our Projects</Button>
-                <Button variant="outline" size="lg">Contact Us</Button>
+                <Link href="/projects"><Button size="lg">Our Projects</Button></Link>
+                <Link href="/contact"><Button variant="outline" size="lg">Contact Us</Button></Link>
               </div>
             </div>
             <div className="md:w-1/2 mt-12 md:mt-0">
@@ -72,7 +70,7 @@ const HomePage: React.FC = () => {
                   An immersive RPG game with Japanese mythology themes and stunning visuals.
                 </p>
                 <div className="mt-4">
-                  <Link to="/projects" className="text-primary hover:text-primary/80 font-medium">
+                  <Link href="/projects" className="text-primary hover:text-primary/80 font-medium">
                     View details →
                   </Link>
                 </div>
@@ -90,7 +88,7 @@ const HomePage: React.FC = () => {
                   A productivity platform with continuous improvement principles at its core.
                 </p>
                 <div className="mt-4">
-                  <Link to="/projects" className="text-primary hover:text-primary/80 font-medium">
+                  <Link href="/projects" className="text-primary hover:text-primary/80 font-medium">
                     View details →
                   </Link>
                 </div>
@@ -108,7 +106,7 @@ const HomePage: React.FC = () => {
                   A digital manga series blending traditional Japanese art with futuristic themes.
                 </p>
                 <div className="mt-4">
-                  <Link to="/projects" className="text-primary hover:text-primary/80 font-medium">
+                  <Link href="/projects" className="text-primary hover:text-primary/80 font-medium">
                     View details →
                   </Link>
                 </div>
@@ -117,7 +115,7 @@ const HomePage: React.FC = () => {
           </div>
           
           <div className="mt-12 text-center">
-            <Button>View All Projects</Button>
+            <Link href="/projects"><Button>View All Projects</Button></Link>
           </div>
         </div>
       </section>
@@ -162,7 +160,7 @@ const HomePage: React.FC = () => {
           </div>
           
           <div className="mt-12 text-center">
-            <Button>Explore Services</Button>
+            <Link href="/services"><Button>Explore Services</Button></Link>
           </div>
         </div>
       </section>
@@ -172,17 +170,17 @@ const HomePage: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold text-white">Ready to start your project?</h2>
           <p className="mt-4 text-xl text-white/90 max-w-3xl mx-auto">
-            Let's collaborate to create something amazing together.
+            Let&apos;s collaborate to create something amazing together.
           </p>
           <div className="mt-8">
-            <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-primary">
-              Contact Us Today
-            </Button>
+            <Link href="/contact">
+              <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-primary">
+                Contact Us Today
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
-    </Layout>
-  );
-};
-
-export default HomePage;
+    </>
+  )
+}

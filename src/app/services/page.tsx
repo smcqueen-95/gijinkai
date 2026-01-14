@@ -1,10 +1,9 @@
-import React from 'react';
-import Layout from '../layouts/MainLayout';
-import Button from '../components/Button';
+import Link from 'next/link'
+import Button from '@/components/Button'
 
-const ServicesPage: React.FC = () => {
+export default function ServicesPage() {
   return (
-    <Layout>
+    <>
       {/* Hero Section */}
       <section className="bg-gray-50 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -279,14 +278,14 @@ const ServicesPage: React.FC = () => {
             Contact us today to discuss how we can help bring your vision to life.
           </p>
           <div className="mt-8">
-            <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-primary">
-              Get in Touch
-            </Button>
+            <Link href="/contact">
+              <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-primary">
+                Get in Touch
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
-    </Layout>
-  );
-};
-
-export default ServicesPage;
+    </>
+  )
+}

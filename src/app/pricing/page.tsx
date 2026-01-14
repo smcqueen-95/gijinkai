@@ -1,12 +1,14 @@
-import React, { useState } from 'react';
-import Layout from '../layouts/MainLayout';
-import Button from '../components/Button';
+'use client'
 
-const PricingPage: React.FC = () => {
-  const [billingPeriod, setBillingPeriod] = useState<'monthly' | 'yearly'>('monthly');
+import { useState } from 'react'
+import Link from 'next/link'
+import Button from '@/components/Button'
+
+export default function PricingPage() {
+  const [billingPeriod, setBillingPeriod] = useState<'monthly' | 'yearly'>('monthly')
   
   return (
-    <Layout>
+    <>
       {/* Hero Section */}
       <section className="bg-gray-50 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -345,14 +347,14 @@ const PricingPage: React.FC = () => {
             Contact us today to discuss your project and find the right plan for your needs.
           </p>
           <div className="mt-8">
-            <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-primary">
-              Contact Us
-            </Button>
+            <Link href="/contact">
+              <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-primary">
+                Contact Us
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
-    </Layout>
-  );
-};
-
-export default PricingPage;
+    </>
+  )
+}

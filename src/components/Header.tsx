@@ -1,10 +1,12 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+'use client'
+
+import { useState } from 'react'
+import Link from 'next/link'
 
 type NavItem = {
-  name: string;
-  path: string;
-};
+  name: string
+  path: string
+}
 
 const navItems: NavItem[] = [
   { name: 'Home', path: '/' },
@@ -14,17 +16,17 @@ const navItems: NavItem[] = [
   { name: 'About', path: '/about' },
   { name: 'Pricing', path: '/pricing' },
   { name: 'Contact', path: '/contact' },
-];
+]
 
-const Header: React.FC = () => {
-  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+export default function Header() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   return (
     <header className="bg-white shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex items-center">
-            <Link to="/" className="flex-shrink-0 flex items-center">
+            <Link href="/" className="flex-shrink-0 flex items-center">
               <span className="text-2xl font-display font-bold gradient-text">技尽界</span>
               <span className="ml-2 text-lg font-semibold">Gijinkai Studio</span>
             </Link>
@@ -35,7 +37,7 @@ const Header: React.FC = () => {
             {navItems.map((item) => (
               <Link
                 key={item.name}
-                to={item.path}
+                href={item.path}
                 className="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium text-dark hover:border-primary hover:text-primary transition-colors"
               >
                 {item.name}
@@ -50,9 +52,11 @@ const Header: React.FC = () => {
           <div className="flex items-center md:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-dark hover:text-primary hover:bg-gray-100 focus:outline-none"
+              className="inline-flex items-center justify-center p-2 rounded-md text-dark hover:text-primary hover:bg-gray-100 focus:outline-none min-h-[44px] min-w-[44px]"
+              aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+              aria-expanded={isMenuOpen}
             >
-              <span className="sr-only">Open main menu</span>
+              <span className="sr-only">{isMenuOpen ? 'Close main menu' : 'Open main menu'}</span>
               {isMenuOpen ? (
                 <svg className="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -74,7 +78,7 @@ const Header: React.FC = () => {
             {navItems.map((item) => (
               <Link
                 key={item.name}
-                to={item.path}
+                href={item.path}
                 className="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-dark hover:bg-gray-50 hover:border-primary hover:text-primary transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
@@ -90,7 +94,5 @@ const Header: React.FC = () => {
         </div>
       )}
     </header>
-  );
-};
-
-export default Header;
+  )
+}
