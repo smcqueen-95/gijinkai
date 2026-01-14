@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import Button from '@/components/Button'
+import CyberpunkCharacter from '@/components/CyberpunkCharacter'
 
 export default function HomePage() {
   return (
@@ -57,111 +58,8 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Right Visual - Anime Character Popping Out */}
-            <div className="md:w-1/2 mt-8 md:mt-0 md:pl-6 lg:pl-10 xl:pl-12 2xl:pl-16 w-full flex-shrink-0 flex items-center justify-center relative animate-fade-in-up animation-delay-300">
-              <div className="relative w-full max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl">
-                {/* Multiple Glowing Aura Layers for Depth */}
-                <div className="absolute inset-0 bg-gradient-to-r from-primary/40 via-secondary/40 to-primary/40 rounded-full blur-3xl opacity-60 animate-pulse -z-10"></div>
-                <div className="absolute inset-0 bg-gradient-to-r from-secondary/30 via-primary/30 to-secondary/30 rounded-full blur-2xl opacity-50 animate-pulse animation-delay-1000 -z-10"></div>
-                <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-secondary/20 to-primary/20 rounded-full blur-xl opacity-40 -z-10"></div>
-                
-                {/* Anime Character SVG with 3D Pop-out Effect */}
-                <div className="relative z-10 transform animate-pop-out" style={{ transformStyle: 'preserve-3d' }}>
-                  <svg 
-                    viewBox="0 0 400 500" 
-                    className="w-full h-auto relative"
-                    style={{ 
-                      filter: 'drop-shadow(0 30px 60px rgba(116, 117, 235, 0.6)) drop-shadow(0 15px 40px rgba(71, 238, 239, 0.5))',
-                    }}
-                  >
-                    <defs>
-                      <linearGradient id="charGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                        <stop offset="0%" stopColor="#7475EB" stopOpacity="0.9" />
-                        <stop offset="100%" stopColor="#47EEEF" stopOpacity="0.9" />
-                      </linearGradient>
-                      <radialGradient id="hairGradient" cx="50%" cy="50%">
-                        <stop offset="0%" stopColor="#2C1810" />
-                        <stop offset="100%" stopColor="#1a0f09" />
-                      </radialGradient>
-                    </defs>
-                    
-                    {/* Energy Aura around character - Behind */}
-                    <circle cx="200" cy="300" r="160" fill="none" stroke="url(#charGradient)" strokeWidth="2" opacity="0.2" className="animate-pulse animation-delay-1000" />
-                    <circle cx="200" cy="300" r="140" fill="none" stroke="url(#charGradient)" strokeWidth="2" opacity="0.3" className="animate-pulse" />
-                    
-                    {/* Hair - Anime Style */}
-                    <g className="animate-float animation-delay-300">
-                      <path d="M 200 70 Q 140 50 100 100 Q 80 140 90 170 Q 95 200 110 230 Q 125 250 145 270 L 145 200 Q 135 175 142 145 Q 148 120 162 108 L 200 70 Z" fill="url(#hairGradient)" />
-                      <path d="M 200 70 Q 260 50 300 100 Q 320 140 310 170 Q 305 200 290 230 Q 275 250 255 270 L 255 200 Q 265 175 258 145 Q 252 120 238 108 Z" fill="url(#hairGradient)" />
-                      {/* Hair highlight */}
-                      <path d="M 200 70 Q 180 85 160 120 Q 150 150 155 180" stroke="#4a3428" strokeWidth="1" fill="none" opacity="0.5" />
-                    </g>
-                    
-                    {/* Head */}
-                    <ellipse cx="200" cy="180" rx="75" ry="85" fill="#FFDBAC" />
-                    
-                    {/* Left Eye - Large Anime Style */}
-                    <g>
-                      <ellipse cx="175" cy="170" rx="14" ry="20" fill="#FFFFFF" />
-                      <ellipse cx="175" cy="176" rx="10" ry="12" fill="#2C1810" />
-                      <circle cx="177" cy="173" r="4" fill="#FFFFFF" />
-                      <ellipse cx="172" cy="168" rx="5" ry="8" fill="#FFFFFF" opacity="0.9" />
-                    </g>
-                    
-                    {/* Right Eye */}
-                    <g>
-                      <ellipse cx="225" cy="170" rx="14" ry="20" fill="#FFFFFF" />
-                      <ellipse cx="225" cy="176" rx="10" ry="12" fill="#2C1810" />
-                      <circle cx="227" cy="173" r="4" fill="#FFFFFF" />
-                      <ellipse cx="222" cy="168" rx="5" ry="8" fill="#FFFFFF" opacity="0.9" />
-                    </g>
-                    
-                    {/* Blush - Kawaii Style */}
-                    <ellipse cx="155" cy="200" rx="12" ry="10" fill="#FFB6C1" opacity="0.5" />
-                    <ellipse cx="245" cy="200" rx="12" ry="10" fill="#FFB6C1" opacity="0.5" />
-                    
-                    {/* Mouth - Happy Expression */}
-                    <path d="M 188 210 Q 200 220 212 210" stroke="#2C1810" strokeWidth="2.5" fill="none" strokeLinecap="round" />
-                    
-                    {/* Neck */}
-                    <rect x="185" y="240" width="30" height="18" rx="4" fill="#FFDBAC" />
-                    
-                    {/* Upper Body - Anime Style Outfit */}
-                    <path d="M 150 258 Q 145 300 150 340 Q 155 370 170 390 Q 185 405 200 410 Q 215 405 230 390 Q 245 370 250 340 Q 255 300 250 258 Z" fill="url(#charGradient)" />
-                    
-                    {/* Left Arm - Raised High */}
-                    <ellipse cx="130" cy="275" rx="22" ry="32" fill="#FFDBAC" transform="rotate(-25 130 275)" />
-                    <ellipse cx="105" cy="310" rx="18" ry="28" fill="#FFDBAC" transform="rotate(-30 105 310)" />
-                    {/* Hand */}
-                    <circle cx="95" cy="335" r="12" fill="#FFDBAC" />
-                    
-                    {/* Right Arm - Raised High */}
-                    <ellipse cx="270" cy="275" rx="22" ry="32" fill="#FFDBAC" transform="rotate(25 270 275)" />
-                    <ellipse cx="295" cy="310" rx="18" ry="28" fill="#FFDBAC" transform="rotate(30 295 310)" />
-                    {/* Hand */}
-                    <circle cx="305" cy="335" r="12" fill="#FFDBAC" />
-                    
-                    {/* Sparkle Effects - Magical */}
-                    <g className="animate-ping">
-                      <circle cx="140" cy="130" r="4" fill="#47EEEF" opacity="0.9" />
-                      <path d="M 140 130 L 140 125 M 140 130 L 140 135 M 140 130 L 135 130 M 140 130 L 145 130" stroke="#47EEEF" strokeWidth="1.5" opacity="0.7" />
-                    </g>
-                    <g className="animate-ping animation-delay-500">
-                      <circle cx="260" cy="130" r="3.5" fill="#7475EB" opacity="0.9" />
-                      <path d="M 260 130 L 260 126 M 260 130 L 260 134 M 260 130 L 256 130 M 260 130 L 264 130" stroke="#7475EB" strokeWidth="1.5" opacity="0.7" />
-                    </g>
-                    <g className="animate-ping animation-delay-1000">
-                      <circle cx="175" cy="110" r="3" fill="#47EEEF" opacity="0.7" />
-                      <path d="M 175 110 L 175 107 M 175 110 L 175 113 M 175 110 L 172 110 M 175 110 L 178 110" stroke="#47EEEF" strokeWidth="1" opacity="0.6" />
-                    </g>
-                  </svg>
-                  
-                  {/* Multiple shadow layers for pop-out effect */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-primary/40 via-secondary/40 to-primary/40 rounded-full blur-3xl -z-20 opacity-60" style={{ transform: 'translateY(50px) scale(1.3)' }}></div>
-                  <div className="absolute inset-0 bg-gradient-to-r from-secondary/30 via-primary/30 to-secondary/30 rounded-full blur-2xl -z-20 opacity-50" style={{ transform: 'translateY(45px) scale(1.25)' }}></div>
-                </div>
-              </div>
-            </div>
+            {/* Right Visual - Cyberpunk Character Popping Out */}
+            {/* <CyberpunkCharacter /> */}
           </div>
         </div>
       </section>
